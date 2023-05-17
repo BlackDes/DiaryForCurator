@@ -1,0 +1,35 @@
+﻿<Page x:Class="Diary4CuratorFullEdition.Pages.MenuPages.StudentsPages.Documents"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Diary4CuratorFullEdition.Pages.MenuPages.StudentsPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Documents">
+
+    <StackPanel>
+		<Menu Margin="5 0 10 0" HorizontalAlignment="Center">
+			<MenuItem x:Name="miPassport" Click="miPassport_Click"
+						  Height="30"
+						  Header="Паспорт" FontSize="16"/>
+			<MenuItem x:Name="miPlaceRegistration" Click="miPlaceRegistration_Click"
+						  Height="30"
+						  Header="Место регистрации" FontSize="16"/>
+			<MenuItem x:Name="miMedicalPolicy" Click="miMedicalPolicy_Click"
+						  Height="30"
+						  Header="Мед. полис" FontSize="16"/>
+			<MenuItem x:Name="miKDNiZP" Click="miKDNiZP_Click"
+						  Height="30"
+						  Header="КДНиЗП" FontSize="16"/>
+			<MenuItem x:Name="miStateAid" Click="miStateAid_Click"
+						  Height="30"
+						  Header="Гос. помощь" FontSize="16"/>
+			<MenuItem x:Name="miITU" Click="miITU_Click"
+						  Height="30"
+						  Header="МСЭ" FontSize="16"/>
+		</Menu>
+		<Frame x:Name="fDocuments" NavigationUIVisibility="Hidden"/>
+	</StackPanel>
+</Page>

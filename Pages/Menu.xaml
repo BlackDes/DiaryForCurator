@@ -1,0 +1,37 @@
+﻿<Page x:Class="Diary4CuratorFullEdition.Pages.Menu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Diary4CuratorFullEdition.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Main">
+
+	<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+		<Button x:Name="btnEditingGroups" Click="btnEditingGroups_Click"
+	            Margin="10 10 10 0" 
+	            Content="Редактирование групп" FontSize="16"
+	            Height="30" MinWidth="300" MaxWidth="400"/>
+		<ComboBox x:Name="cbxGroupSelection" SelectionChanged="cbxGroupSelection_SelectionChanged"
+				  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+				  Margin="10 10 10 0" 
+	              FontSize="16"
+	              Height="30" MinWidth="300" MaxWidth="400" 
+				  materialDesign:HintAssist.Hint="Выбор группы"/>
+		<Button x:Name="btnStudents" Click="btnStudents_Click"
+	            Margin="10 10 10 0" 
+	            Content="Список студентов" FontSize="16"
+	            Height="30" MinWidth="300" MaxWidth="400"/>
+		<Button x:Name="btnCuratedHours" Click="btnCuratedHours_Click"
+	            Margin="10 10 10 0" 
+	            Content="Кураторские часы" FontSize="16"
+	            Height="30" MinWidth="300" MaxWidth="400"/>
+
+		<Button x:Name="btnBack" Click="btnBack_Click"
+	            Margin="10 10 10 10" 
+	            Content="Назад" FontSize="16"
+	            Height="30" MinWidth="300" MaxWidth="400"/>
+	</StackPanel>
+</Page>

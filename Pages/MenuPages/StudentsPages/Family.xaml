@@ -1,0 +1,91 @@
+﻿<Page x:Class="Diary4CuratorFullEdition.Pages.MenuPages.StudentsPages.Family"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Diary4CuratorFullEdition.Pages.MenuPages.StudentsPages" 
+	  mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Family">
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition Height="135"/>
+		</Grid.RowDefinitions>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+
+		<StackPanel Grid.RowSpan="2" HorizontalAlignment="Right">
+			<DataGrid x:Name="dgMembers" MouseDoubleClick="dgMembers_MouseDoubleClick" ItemsSource="{Binding}" 
+					  IsReadOnly="True" ColumnWidth="*" AutoGenerateColumns="False"
+					  Margin="5 10 10 10" Height="Auto" MinWidth="240" MaxWidth="400" 
+					  FontSize="16">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Член семьи" Binding="{Binding Member}" IsReadOnly ="True" Width="*"/>
+				</DataGrid.Columns>
+			</DataGrid>
+		</StackPanel>
+
+		<StackPanel VerticalAlignment="Center" Grid.Column="1">
+			<TextBox x:Name="tbxSurname" IsKeyboardFocusedChanged="Changed_IsKeyboardFocusedChanged"
+					 HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+					 Margin="10 10 10 0" Height="30" MinWidth="250" MaxWidth="400"
+					 FontSize="16"
+					 materialDesign:HintAssist.Hint="Фамилия"/>
+			<TextBox x:Name="tbxName" IsKeyboardFocusedChanged="Changed_IsKeyboardFocusedChanged"
+					 HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+					 Margin="10 10 10 0" Height="30" MinWidth="250" MaxWidth="400"
+					 FontSize="16"
+					 materialDesign:HintAssist.Hint="Имя"/>
+			<TextBox x:Name="tbxPatronymic" IsKeyboardFocusedChanged="Changed_IsKeyboardFocusedChanged"
+					 HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+					 Margin="10 10 10 0" Height="30" MinWidth="250" MaxWidth="400"
+					 FontSize="16"
+					 materialDesign:HintAssist.Hint="Отчество"/>
+			<ComboBox x:Name="cbxRole" IsKeyboardFocusedChanged="Changed_IsKeyboardFocusedChanged"
+					  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+					  Margin="10 10 10 10" Height="30" MinWidth="250" MaxWidth="400"
+					  FontSize="16"
+					  materialDesign:HintAssist.Hint="Роль в семье"/>
+		</StackPanel>
+
+		<StackPanel VerticalAlignment="Center" Grid.Column="3">
+			<TextBox x:Name="tbxNumber" IsKeyboardFocusedChanged="Changed_IsKeyboardFocusedChanged"
+					 HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+					 Margin="10 10 10 0" Height="30" MinWidth="250" MaxWidth="400"
+					 FontSize="16"
+					 materialDesign:HintAssist.Hint="Номер телефона"/>
+			<TextBox x:Name="tbxWork" IsKeyboardFocusedChanged="Changed_IsKeyboardFocusedChanged"
+					 HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+					 Margin="10 10 10 0" Height="30" MinWidth="250" MaxWidth="400"
+					 FontSize="16"
+					 materialDesign:HintAssist.Hint="Место работы"/>
+			<TextBox x:Name="tbxPost" IsKeyboardFocusedChanged="Changed_IsKeyboardFocusedChanged"
+					 HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+					 Margin="10 10 10 10" Height="30" MinWidth="250" MaxWidth="400"
+					 FontSize="16"
+					 materialDesign:HintAssist.Hint="Должность"/>
+		</StackPanel>
+
+		<StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+			<Button x:Name="btnAdd" Click="btnAdd_Click"
+					Margin="10 10 10 0" 
+					Content="Добавить" FontSize="16"
+					Height="30" MinWidth="300" MaxWidth="400"/>
+			<Button x:Name="btnChange" Click="btnChange_Click"
+					Margin="10 10 10 0" 
+					Content="Изменить" FontSize="16"
+					Height="30" MinWidth="300" MaxWidth="400"/>
+			<Button x:Name="btnDelete" Click="btnDelete_Click"
+					Margin="10 10 10 10" 
+					Content="Удалить" FontSize="16"
+					Height="30" MinWidth="300" MaxWidth="400"/>
+		</StackPanel>
+	</Grid>
+</Page>

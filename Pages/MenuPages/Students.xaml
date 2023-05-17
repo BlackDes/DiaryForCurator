@@ -1,0 +1,76 @@
+﻿<Page x:Class="Diary4CuratorFullEdition.Pages.Main.Students"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:local="clr-namespace:Diary4CuratorFullEdition.Pages.Main"
+	  mc:Ignorable="d" 
+	  d:DesignHeight="450" d:DesignWidth="800"
+	  Title="Students">
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition Height="40"/>
+		</Grid.RowDefinitions>
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="350"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+
+		<StackPanel Grid.RowSpan="2">
+			<Button x:Name="btnAdd" Click="btnAdd_Click" VerticalAlignment="Center"
+					Margin="10 10 5 10" Height="30"
+					Content="Добавить" FontSize="16"/>
+			<Button x:Name="btnDelete" Click="btnDelete_Click" VerticalAlignment="Center"
+					Margin="10 0 5 10" Height="30"
+					Content="Удалить" FontSize="16"/>
+			<Button x:Name="btnCancel" Click="btnCancel_Click" VerticalAlignment="Center"
+					Margin="10 0 5 10" Height="30"
+					Content="Отмена" FontSize="16"/>
+			<DataGrid x:Name="dgStudents" MouseDoubleClick="dgStudents_MouseDoubleClick" ItemsSource="{Binding}" 
+					  IsReadOnly="True" ColumnWidth="*" AutoGenerateColumns="False" 
+					  Margin="10 0 5 10"
+					  FontSize="16">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="Ф.И.О." Binding="{Binding SNP}" IsReadOnly ="True" Width="*"/>
+				</DataGrid.Columns>
+			</DataGrid>
+		</StackPanel>
+
+		<StackPanel Grid.Column="1" Grid.RowSpan="2">
+			<Menu x:Name="mStudent" Margin="5 10 10 0" HorizontalAlignment="Center">
+				<MenuItem x:Name="miBasic" Click="miBasic_Click"
+						  Height="30"
+						  Header="Основные данные" FontSize="16"/>
+				<MenuItem x:Name="miHomeAddress" Click="miHomeAddress_Click"
+						  Height="30"
+						  Header="Домашний адрес" FontSize="16"/>
+				<MenuItem x:Name="miDocuments" Click="miDocuments_Click"
+						  Height="30"
+						  Header="Документы" FontSize="16"/>
+				<MenuItem x:Name="miFamily" Click="miFamily_Click"
+						  Height="30"
+						  Header="Семья" FontSize="16"/>
+				<MenuItem x:Name="miSocialMedia" Click="miSocialMedia_Click"
+						  Height="30"
+						  Header="Социальные сети" FontSize="16"/>
+				<MenuItem x:Name="miGroupAsset" Click="miGroupAsset_Click"
+						  Height="30"
+						  Header="Актив группы" FontSize="16"/>
+				<MenuItem x:Name="miStatuses" Click="miStatuses_Click"
+						  Height="30"
+						  Header="Статусы" FontSize="16"/>
+				<MenuItem x:Name="miCallOfParents" Click="miCallOfParents_Click"
+						  Height="30"
+						  Header="Звонок родителям" FontSize="16"/>
+			</Menu>
+			<Frame x:Name="fStudent" NavigationUIVisibility="Hidden" Margin="5 0 10 10"/>
+		</StackPanel>
+
+		<Button x:Name="btnBack" Click="btnBack_Click" VerticalAlignment="Center"
+				Margin="10 0 5 10" Grid.Row="2" Height="30"
+                Content="Назад" FontSize="16"/>
+	</Grid>
+</Page>

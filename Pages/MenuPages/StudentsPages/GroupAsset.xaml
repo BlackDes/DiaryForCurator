@@ -1,0 +1,27 @@
+﻿<Page x:Class="Diary4CuratorFullEdition.Pages.MenuPages.StudentsPages.GroupAsset"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:Diary4CuratorFullEdition.Pages.MenuPages.StudentsPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GroupAsset">
+
+	<StackPanel HorizontalAlignment="Center">
+		<ComboBox x:Name="cbxRole" SelectionChanged="cbxRole_SelectionChanged"
+					HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+					Margin="10 10 10 10" Height="30" MinWidth="250" MaxWidth="400"
+					FontSize="16"
+					materialDesign:HintAssist.Hint="Активность группы"/>
+		<DataGrid x:Name="dgSelected" MouseDoubleClick="dgSelected_MouseDoubleClick" ItemsSource="{Binding}" 
+					IsReadOnly="True" ColumnWidth="*" AutoGenerateColumns="False"
+					Margin="10 10 10 10" Height="Auto" MinWidth="300" MaxWidth="400"
+					FontSize="16">
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Список актива" Binding="{Binding Name}" IsReadOnly ="True" Width="*"/>
+			</DataGrid.Columns>
+		</DataGrid>
+	</StackPanel>
+</Page>
